@@ -1,11 +1,13 @@
 import React from "react";
 
-export const Buttons = (props) => {
+export const Buttons = ({plus, minus, reset, saveValue}) => {
+    
     return (
         <div className="buttons">
-            <button className="blue_btn">Увеличить</button>
-            <button className="orange_btn">Уменшить</button>
-            <button className="grey_btn">Сбросить</button>
+            <button className="plus" onClick={plus}>Увеличь</button>
+            <button className="minus" onClick={minus}>Уменшь</button>
+            <button className="reset" onClick={reset}>Сбрось</button>
+            <button className="save" onClick={saveValue}>Save</button>
         </div>
     )
 }

@@ -21,7 +21,6 @@ li {
   gap: 20px;
 }
 .main {
-  width: 770px;
   margin: 0 auto;
   margin-top: 50px;
   text-align: center;
@@ -34,7 +33,7 @@ li {
   margin: 0;
   color: darkblue;
 }
-.buttons > button {
+ button {
   width: 200px;
   padding: 15px 25px;
   margin: 10px;
@@ -44,9 +43,16 @@ li {
   background-color: #fff;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
-.buttons > button:hover {
+ button:hover {
   transform: scale(1.05);
   background-color: coral;
+}
+.reset:hover {
+background-color: black;
+color: #fff;
+}
+.save:hover {
+  background-color: aliceblue;
 }
 .footer {
   width: 770px;
@@ -63,4 +69,11 @@ li {
 }
 .foot-menu > li > a {
   color: grey;
+}
+.summa {
+  width: 500px;
+  margin: 20px auto;
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding: 5px 0;
 }

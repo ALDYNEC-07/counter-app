@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Number = (props) => {
+export const Number = ({count}) => {
     return (
         <div className="number">
-            <p>0</p>
+            <p>{count}</p>
         </div>
     )
 }
