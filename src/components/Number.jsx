@@ -1,9 +1,10 @@
 import React from "react";
 
+
 export const Number = ({count}) => {
     return (
         <div className="number">
-            <p>{count}</p>
+            <p className="num">{count}</p>
         </div>
     )
 }

@@ -1,14 +1,22 @@
 import React from "react";
-import { FooterLogo } from "./FooterLogo";
-import { FooterNavbar } from "./FooterNavbar";
-import { Author } from "./Author";
+import FootLogo from "../assets/FooterLogo.svg"
 
-export const Footer = (props) => {
+
+export const Footer = () => {
+    const footMenu = ["Партнерам", "Разработчикам", "Вакансии"]
     return (
         <footer className="footer">
-            <FooterLogo/>
-            <FooterNavbar/>
-            <Author/>
+            <img src={FootLogo} alt="" />
+            <ul className="footMenu">
+                {
+                    footMenu.map((foot) => (
+                        <li>
+                            <a href="">{foot}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <p>“Lincode”, 2023г</p>
         </footer>
     )
 }

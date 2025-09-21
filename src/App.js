@@ -1,16 +1,18 @@
-import { Footer } from './components/Footer';
+import React from 'react';
 import { Header } from './components/Header';
 import { Main } from './components/Main';
+import { Footer } from './components/Footer';
 
-function App() {
+
+
+export const App = () => {
   return (
     <div className="App">
       <Header/>
-      <hr/>
       <Main/>
       <Footer/>
     </div>
-  );
+  )
 }
 
-export default App;
+

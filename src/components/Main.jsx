@@ -3,46 +3,33 @@ import { Number } from "./Number";
 import { Buttons } from "./Buttons";
 
 
-
-
 export const Main = (props) => {
 
+    const [count, setCount] = useState(0);
+    const [savedValues, setSavedValues] = useState([]);
 
+    const plus = () => setCount(count + 1);
+    
+    const minus = () => {if (count > 0 ) {setCount(count - 1)}}
 
-    const [counter, setCounter] = useState(0)
-    const [savedValues, setSavedValues] = useState([]); 
+    const reset = () => setCount(0)
 
-    const plus = () => {
-        setCounter(counter + 3) 
-    }
-    const minus = () => {
-        if (counter > 0) {
-            setCounter(counter - 2)
+    const save = () => {
+        if (!savedValues.includes(count)) {
+            setSavedValues([...savedValues, count])
         }
     }
-    const reset = () => {
-            setCounter(0)
-    }
-
-    const saveValue = () => {
-        if (!savedValues.includes(counter)) {
-            setSavedValues([...savedValues, counter]);
-        }
-    };
-
     return (
-        <main className="main">
-            <Number count={counter}/>
-            <Buttons plus={plus} minus={minus} reset={reset} saveValue={saveValue}/>
-
-             <div className="summa">
-                  <h2>Сохранённые значения:</h2>
-                  <ul>
-                      {savedValues.map((val, index) => (
-                            <li key={index}>{val}</li>
+        <div className="main">
+            <Number count={count}/>
+            <Buttons plus={plus} minus={minus} reset={reset} save={save}/>
+            <div className="saveV">
+             <ul>
+                      {savedValues.map((val) => (
+                            <li className="saveNum">{val}</li>
                         ))}
                 </ul>
+            </div>  
         </div>
-        </main>
     )
 }
