@@ -23,7 +23,7 @@ ul {
   align-items: center;
   background-color: rgb(66, 113, 154);
   border-radius: 0 0 10px 10px;
-  border: 2px solid coral;
+  border: 1px solid coral;
   border-top: 0;
 }
 .content {

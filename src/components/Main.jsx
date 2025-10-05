@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Number } from "./Number";
 import { Buttons } from "./Buttons";
-
 import { useDispatch, useSelector } from "react-redux";
+import { PlusOne, MinusOne, Reset } from "./actions";
 
 export const Main = (props) => {
 
@@ -10,21 +10,15 @@ export const Main = (props) => {
     const dispatch = useDispatch()
 
     const plus = () => {
-        dispatch({
-            type: "plus"
-        })
+        dispatch(PlusOne())
     }
     
     const minus = () => {
-        dispatch({
-            type: "minus"
-        })
+        dispatch(MinusOne())
     }
 
     const reset = () => {
-        dispatch({
-            type: "reset"
-        })
+        dispatch(Reset())
     }
 
     // const save = () => {
