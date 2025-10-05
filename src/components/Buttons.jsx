@@ -10,7 +10,7 @@ export const Buttons = ({plus, minus, reset, save}) => {
             </div>
             <div className="two">
             <button className="reset" onClick={reset}>сброс</button>
-            <button className="save" onClick={save}>save</button>
+            <button className="save" disabled="disabled" onClick={save}>save</button>
             </div>
         </div>
     )

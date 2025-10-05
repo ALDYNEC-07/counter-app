@@ -69,6 +69,7 @@ margin-left: 50px;
 }
 .save:hover {
   background-color: black;
+  color: black;
 }
 .saveNum {
   background-color: darkcyan;
