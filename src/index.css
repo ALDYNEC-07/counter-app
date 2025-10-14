@@ -1,22 +1,12 @@
-#trueLi {
+#li {
     border: 1px solid green;
-    background-color: lightgreen;
+    background-color: rgb(166, 219, 166);
     padding: 8px;
     border-radius: 6px;
     margin: 6px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
-#falseLi {
-    border: 1px solid red;
-    background-color: lightcoral;
-    padding: 8px;
-    border-radius: 6px;
-    margin: 6px;
+#li:hover {
+    transform: scale(1.05);
+    background-color: rgb(120, 200, 120);
 }
-/* #trueA {
-    color: lightgreen;
-    font-weight: bold;
-}
-#falseA {
-    color: lightcoral;
-    font-weight: bold;
-} */
