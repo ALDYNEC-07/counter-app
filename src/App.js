@@ -18,8 +18,10 @@ export const App = () => {
      {
       loading ? <h2>Loading...</h2> : todos.map((item) => {
           return (
-            <div key={item.id}>
+            <div key={item.id} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+              <input id='check' type="checkbox" />
               <li id='li'>{item.title}</li>
+              <input type='button' value='Delete' />
             </div>
           )
         })

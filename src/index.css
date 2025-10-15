@@ -1,12 +1,42 @@
 #li {
+    width: 600px;
     border: 1px solid green;
     background-color: rgb(166, 219, 166);
     padding: 8px;
     border-radius: 6px;
     margin: 6px;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: left;
+    list-style: none;
 }
 #li:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     background-color: rgb(120, 200, 120);
+}
+.App {
+    width: 700px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+#check {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+#check:hover {
+    cursor: pointer;
+}
+input[type="button"] {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+input[type="button"]:hover {
+    background-color: darkred;
 }
