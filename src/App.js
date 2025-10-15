@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadTodos } from './action';
+import {loadTodos, deleteTodo } from './action';
 
 export const App = () => {
   const todos = useSelector(state => state.todos)
@@ -11,21 +11,25 @@ export const App = () => {
     dispatch(loadTodos())
   }, [])
 
+  const handleDelete = (id) => {
+    dispatch(deleteTodo(id))
+  }
+  
   return (
     <div className="App">
       <h1 style={{textAlign: 'center', color: '#090'}}>Counter App</h1>
       <ul>
-     {
-      loading ? <h2>Loading...</h2> : todos.map((item) => {
-          return (
-            <div key={item.id} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-              <input id='check' type="checkbox" />
-              <li id='li'>{item.title}</li>
-              <input type='button' value='Delete' />
-            </div>
-          )
-        })
-      }
+        {
+          loading ? <h2>Loading...</h2> : todos.map((todo) => {
+            return (
+              <div key={todo.id} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <input id='check' type='checkbox' />
+                <li id='li'>{todo.title} <img src='https://i.pinimg.com/originals/85/3c/52/853c524391ad70e0d2036373cd978080.jpg' /></li>
+              <input onClick={() => handleDelete(todo.id)} type='button' value='Delete' />
+              </div>
+            )
+          })
+        }
       </ul>
     </div>
   )

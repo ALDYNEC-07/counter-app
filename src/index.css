@@ -1,20 +1,23 @@
 #li {
     width: 600px;
+    background-color: lightgreen;
     border: 1px solid green;
-    background-color: rgb(166, 219, 166);
     padding: 8px;
     border-radius: 6px;
     margin: 6px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     text-align: left;
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #li:hover {
     transform: scale(1.02);
     background-color: rgb(120, 200, 120);
 }
 .App {
-    width: 700px;
+    width: 900px;
     margin: auto;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -39,4 +42,14 @@ input[type="button"] {
 }
 input[type="button"]:hover {
     background-color: darkred;
+}
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
