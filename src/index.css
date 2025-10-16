@@ -29,7 +29,7 @@
 #check:hover {
     cursor: pointer;
 }
-input[type="button"] {
+input[type="button"]{
     background-color: red;
     color: white;
     border: none;
