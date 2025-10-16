@@ -3,7 +3,7 @@ import React from "react";
 
 export const loadTodos = () => {
     return (dispatch) => {
-        dispatch({type: "load/todos/rending"})
+        dispatch({type: "load/todos/pending"})
 
         fetch('https://jsonplaceholder.typicode.com/photos?_limit=10')
         .then((response) => response.json())

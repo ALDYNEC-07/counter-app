@@ -32,8 +32,8 @@ import { act } from 'react';
               ...state,
               todos: state.todos.filter((todo) => todo.id !== action.payload)
             }
-            
-           case "update/check/fulfilled":
+
+          case "update/check/fulfilled":
             return {
               ...state, 
               todos: state.todos.map((todo) => {

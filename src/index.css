@@ -47,6 +47,7 @@ img {
     height: 100px;
     border-radius: 8px;
     margin-right: 10px;
+    object-fit: cover;
 }
 img:hover {
     transform: scale(1.05);
