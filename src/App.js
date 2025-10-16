@@ -28,13 +28,11 @@ export const App = () => {
           loading ? <ClipLoader /> : todos.map((todo) => {
             return (
               <div key={todo.id} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <div className='checkbox'>
                 {
-                  todo.checking ? (
-                    <ClipLoader />
-                  )  : (
-                    <input onChange={() => handleCheck(todo.id, todo.completed)} id='check' type='checkbox' />
-                  )
+                  todo.checking ? <ClipLoader /> : <input onChange={() => handleCheck(todo.id, todo.completed)} id='check' type='checkbox' />
                 }
+                </div>
                 <li id='li'>{todo.title} <img src='https://i.pinimg.com/originals/e4/21/50/e4215008df6962d94248502bed11a113.jpg' /></li>
               <input onClick={() => handleDelete(todo.id)} disabled={todo.deleting} type='button' value='Delete' id='buttonn'/>
               </div>
