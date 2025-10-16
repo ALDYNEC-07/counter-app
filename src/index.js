@@ -5,6 +5,7 @@ import {App} from './App';
 import { applyMiddleware, createStore } from 'redux';
 import { thunk } from 'redux-thunk';
 import { Provider } from 'react-redux';
+import { act } from 'react';
 
       const initialSate = {
         todos: [],
@@ -32,6 +33,18 @@ import { Provider } from 'react-redux';
               todos: state.todos.filter((todo) => todo.id !== action.payload)
             }
             
+           case "update/check/fulfilled":
+            return {
+              ...state, 
+              todos: state.todos.map((todo) => {
+                if(todo.id === action.payload.id) {
+                  return {...todo, completed: !todo.completed}
+                }
+                return todo
+              })
+            }
+
+
           default:
             return state
         }

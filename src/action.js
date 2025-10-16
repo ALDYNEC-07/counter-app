@@ -35,3 +35,29 @@ export const deleteTodo = (id) => {
         });
     }
 }
+
+export const updateCheck = (id, completed) => {
+    return (dispatch) => {
+        dispatch({type: "update/check/start"})
+
+        fetch(`https://jsonplaceholder.typicode.com/photos?_limit=10/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                completed: !completed
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+        .then((response) => response.json())
+        .then(() => {
+            dispatch({
+                type: "update/check/fulfilled",
+                payload: id
+            })
+        })
+                .catch((error) => {
+            console.error('Error:', error);
+        });
+    }
+}
