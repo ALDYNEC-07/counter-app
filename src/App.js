@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {loadTodos, deleteTodo, updateCheck } from './action';
+import {loadTodos, deleteTodo, updateCheck } from './redux/action';
 import { ClipLoader } from "react-spinners";
 
 export const App = () => {

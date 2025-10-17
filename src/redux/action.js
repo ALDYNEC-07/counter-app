@@ -1,11 +1,10 @@
-import { type } from "@testing-library/user-event/dist/type";
-import React from "react";
+
 
 export const loadTodos = () => {
     return (dispatch) => {
         dispatch({type: "load/todos/pending"})
 
-        fetch('https://jsonplaceholder.typicode.com/photos?_limit=10')
+        fetch('https://jsonplaceholder.typicode.com/todos')
         .then((response) => response.json())
         .then((json) => {
             dispatch({
@@ -20,7 +19,7 @@ export const deleteTodo = (id) => {
     return (dispatch) => {
         dispatch({type: "delete/todo/start", payload: id})
 
-        fetch(`https://jsonplaceholder.typicode.com/photos?_limit=10/${id}`, {
+        fetch(`https://jsonplaceholder.typicode.com/todos${id}`, {
             method: 'DELETE'
         })
         .then((response) => response.json())
@@ -40,7 +39,7 @@ export const updateCheck = (id, completed) => {
     return (dispatch) => {
         dispatch({type: "update/check/start", payload: id})
 
-        fetch(`https://jsonplaceholder.typicode.com/photos?_limit=10/${id}`, {
+        fetch(`https://jsonplaceholder.typicode.com/todos${id}`, {
             method: 'PATCH',
             body: JSON.stringify({
                 completed: !completed
