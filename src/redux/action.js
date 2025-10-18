@@ -19,7 +19,7 @@ export const deleteTodo = (id) => {
     return (dispatch) => {
         dispatch({type: "delete/todo/start", payload: id})
 
-        fetch(`https://jsonplaceholder.typicode.com/todos${id}`, {
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
             method: 'DELETE'
         })
         .then((response) => response.json())
@@ -39,7 +39,7 @@ export const updateCheck = (id, completed) => {
     return (dispatch) => {
         dispatch({type: "update/check/start", payload: id})
 
-        fetch(`https://jsonplaceholder.typicode.com/todos${id}`, {
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
             method: 'PATCH',
             body: JSON.stringify({
                 completed: !completed
@@ -49,14 +49,11 @@ export const updateCheck = (id, completed) => {
             }
         })
         .then((response) => response.json())
-        .then(() => {
+        .then((json) => {
             dispatch({
                 type: "update/check/fulfilled",
                 payload: id
             })
         })
-                .catch((error) => {
-            console.error('Error:', error);
-        });
     }
 }

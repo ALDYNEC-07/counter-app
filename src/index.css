@@ -53,3 +53,6 @@ img:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
+#loadd {
+    margin-left: -5px;
+}

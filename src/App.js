@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {loadTodos, deleteTodo, updateCheck } from './redux/action';
-import { ClipLoader } from "react-spinners";
+import { useDispatch } from 'react-redux';
+import { loadTodos, deleteTodo, updateCheck } from './redux/action';
+import { Header } from './components/Header';
+import { Todos } from './components/Todos';
 
 export const App = () => {
-  const todos = useSelector(state => state.todos)
-  const loading = useSelector(state => state.loading)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,24 +21,11 @@ export const App = () => {
   
   return (
     <div className="App">
-      <h1 style={{textAlign: 'center', color: '#090'}}>Counter App</h1>
-      <ul>
-        {
-          loading ? <ClipLoader /> : todos.map((todo) => {
-            return (
-              <div key={todo.id} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <div className='checkbox'>
-                {
-                  todo.checking ? <ClipLoader /> : <input onChange={() => handleCheck(todo.id, todo.completed)} id='check' type='checkbox' />
-                }
-                </div>
-                <li id='li'>{todo.title} <img src='https://i.pinimg.com/originals/e4/21/50/e4215008df6962d94248502bed11a113.jpg' /></li>
-              <input onClick={() => handleDelete(todo.id)} disabled={todo.deleting} type='button' value='Delete' id='buttonn'/>
-              </div>
-            )
-          })
-        }
-      </ul>
+      <Header />
+      <Todos 
+        handleCheck={handleCheck}
+        handleDelete={handleDelete}
+       />
     </div>
   )
 }

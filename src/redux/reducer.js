@@ -56,7 +56,7 @@ export const reducer = (state = initialSate, action) => {
             return {
               ...state, 
               todos: state.todos.map((todo) => {
-                if(todo.id === action.payload.id) {
+                if(todo.id === action.payload) {
                   return {
                     ...todo, 
                     completed: !todo.completed,
