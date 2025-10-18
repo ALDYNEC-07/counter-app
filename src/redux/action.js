@@ -57,3 +57,19 @@ export const updateCheck = (id, completed) => {
         })
     }
 }
+
+
+export const loadUsers = () => {
+    return (dispatch) => {
+        dispatch({type: "load/users/start"})
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => response.json())
+        .then((json) => {
+            dispatch({
+                type: "load/users/fulfilled",
+                payload: json
+            })
+        })
+    }
+}

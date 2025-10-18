@@ -29,7 +29,7 @@
 #check:hover {
     cursor: pointer;
 }
-input[type="button"]{
+.delete-button{
     background-color: rgb(0, 255, 225);
     color: black;
     border: none;
@@ -39,7 +39,7 @@ input[type="button"]{
     transition: background-color 0.3s ease;
     margin-left: 10px;
 }
-input[type="button"]:hover {
+.delete-button:hover {
     background-color: rgb(43, 10, 10);
     color: aliceblue;
 }

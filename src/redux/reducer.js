@@ -1,6 +1,9 @@
       const initialSate = {
         todos: [],
-        loading: false
+        loading: false,
+
+        users: [],
+        loadUsers: false
       }
 
 export const reducer = (state = initialSate, action) => {
@@ -65,6 +68,19 @@ export const reducer = (state = initialSate, action) => {
                 }
                 return todo
               })
+            }
+
+          case "load/users/start":
+            return {
+              ...state,
+              loadUsers: true
+            }
+
+          case "load/users/fulfilled":
+            return {
+              ...state,
+              users: action.payload,
+              loadUsers: false
             }
 
 

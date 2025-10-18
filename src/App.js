@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { loadTodos, deleteTodo, updateCheck } from './redux/action';
+import { loadTodos, deleteTodo, updateCheck, loadUsers } from './redux/action';
 import { Header } from './components/Header';
 import { Todos } from './components/Todos';
 
@@ -9,6 +9,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(loadTodos())
+    dispatch(loadUsers())
   }, [])
 
   const handleDelete = (id) => {
