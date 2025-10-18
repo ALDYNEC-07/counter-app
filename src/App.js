@@ -1,32 +1,73 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { loadTodos, deleteTodo, updateCheck, loadUsers } from './redux/action';
-import { Header } from './components/Header';
-import { Todos } from './components/Todos';
-
 export const App = () => {
-  const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(loadTodos())
-    dispatch(loadUsers())
-  }, [])
 
-  const handleDelete = (id) => {
-    dispatch(deleteTodo(id))
-  }
+// 1. Замена всех отрицательных чисел
 
-  const handleCheck = (id, completed) => {
-    dispatch(updateCheck(id, completed))
-  }
+//     Есть массив из чисел `[2, -2, 0.1, 0, 0, -10, -9.9, -0.5, 0.3, 0.003, 2]`.
+//     Напиши код, который все отрицательные значения элементов массива заменит на нолик.
+    
+//     В итоге должно получиться: `[2, 0, 0.1, 0, 0, 0, 0, 0, 0.3, 0.003, 2]`.
   
+
+  const array = [2, -2, 0.1, 0, 0, -10, -9.9, -0.5, 0.3, 0.003, 2]
+
+  const newArray = array.map((a) => (a < 0 ? 0 : a));
+  console.log(newArray); // [2, 0, 0.1, 0, 0, 0, 0, 0, 0.3, 0.003, 2]
+  
+
+
+// 2. Избавляемся от близнецов
+
+//    Дан массив из объектов:
+//     `const elements = [` 
+//     `{ a: 2, b: 12 },` 
+//     `{ a: 0.1, b: 0.1 },` 
+//     `{ a: 0, b: 1 },` 
+//     `{ a: 100, b: 1000 },` 
+//     `{ a: 4, b: 4 }` 
+//    `];`
+   
+// Обработай массив так, чтобы в итоге остались только те элементы, у которых значения свойств `a` и `b` не совпадают.
+
+    const elements = [
+    { a: 2, b: 12 },
+    { a: 0.1, b: 0.1 },
+    { a: 0, b: 1 },
+    { a: 100, b: 1000 },
+    { a: 4, b: 4 } 
+   ];
+
+
+   const newElements = elements.filter((el) => (el.a !== el.b))
+   
+   console.log(newElements); // [{a: 2, b: 12}, {a: 0, b: 1}, {a: 100, b: 1000}]
+
+   
+
+// 3. Поиск близнеца
+
+// Напиши код, который в массиве из предыдущего задания найдет какого-нибудь близнеца 
+// (объекта, у которого значения обеих свойств равны) и вернет сумму этих значений.
+
+    const elements2 = [
+    { a: 2, b: 12 },
+    { a: 0.1, b: 0.1 },
+    { a: 0, b: 1 },
+    { a: 100, b: 1000 },
+    { a: 4, b: 4 } 
+   ];
+
+   const found = elements2.find((sum) => (sum.a === sum.b))
+   const foundSum = found.a + found.b;
+    if (found) {
+     const foundSum = found.a + found.b
+     console.log(foundSum)
+    } else {
+      console.log('Близнец не найден')
+    }
+   
   return (
     <div className="App">
-      <Header />
-      <Todos 
-        handleCheck={handleCheck}
-        handleDelete={handleDelete}
-       />
     </div>
   )
 }
