@@ -39,7 +39,7 @@
     cursor: pointer;
     transform: scale(1.02);
 }
-.todos, .todos-arrow {
+.todos {
     width: 600px;
     background-color: beige;
     border-radius: 10px;
@@ -58,12 +58,18 @@
     border-radius: 5px;
 }
 .todos-arrow {
+    width: 600px;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     margin-bottom: 20px;
+    background-image: url("https://avatars.mds.yandex.net/i?id=9cf9801cbf117d3145632b23a5ab9e85_l-2429503-images-thumbs&n=13");   
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 .filter > input {
     width: 100%;
@@ -71,3 +77,4 @@
     box-sizing: border-box;
     line-height: 1.5;
 }
+
