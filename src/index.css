@@ -1,0 +1,73 @@
+.App {
+    width: 1200px;
+    display: flex;
+    padding-left: 100px;
+    padding-top: 20px;
+}
+.users {
+    width: 300px;
+    background-color: aliceblue;
+    margin-right: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+.ulUsers {
+    list-style: none;
+    padding: 0;
+    padding-inline: 10px;
+}
+.liUsers {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.liUsers span {
+    display: block;
+}
+.liUsers .username {
+    font-weight: bold;
+}
+.liUsers .email {
+    font-style: italic;
+    color: gray;
+}
+.liUsers:hover {
+    background-color: lightblue;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+.todos, .todos-arrow {
+    width: 600px;
+    background-color: beige;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+.ulTodos {
+    list-style: none;
+    padding: 0;
+    padding-inline: 10px;
+}
+.liTodos, .filter > input {  
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.todos-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.filter > input {
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
