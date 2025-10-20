@@ -1,16 +1,11 @@
 const initialState = {
     users: [],
-    todos: [],
-
     selectedUsersId: null,
-    filter: "",
-
-    loadingUsers: false,
-    loadingTodos: false
+    loadingUsers: false
 }
 
 
-export const reducer = (state = initialState, action) => {
+export const users = (state = initialState, action) => {
     switch(action.type) {
         case "load/users/start":
             return {
@@ -24,32 +19,11 @@ export const reducer = (state = initialState, action) => {
                 loadingUsers: false,
                 users: action.payload
             }
-
-        case "load/todos/start":
-            return {
-                ...state,
-                loadingTodos: true
-            }
-
-        case "load/todos/fulfilled":
-            return {
-                ...state,
-                loadingTodos: false,
-                todos: action.payload
-            }
-
         case "select/userId":
             return {
                 ...state,
                 selectedUsersId: action.payload
             }
-
-        case "set/filterText":
-            return {
-                ...state,
-                filter: action.payload
-            }
-
             
             default:
                 return state

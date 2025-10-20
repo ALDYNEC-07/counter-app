@@ -2,17 +2,17 @@ import { useDispatch, useSelector } from "react-redux"
 import { setFilterText } from "./action"
 
 export const Todos = () => {
-    const todos = useSelector((state) => state.todos)
-    const filter = useSelector((state) => state.filter)
+    const todos = useSelector((state) => state.todos.todos)
+    const filter = useSelector((state) => state.todos.filter)
     const dispatch = useDispatch()
-    const selectedUsersId = useSelector((state) => state.selectedUsersId)
+    const selectedUsersId = useSelector((state) => state.users.selectedUsersId)
 
     const filteredTodos = todos
     .filter(todo => todo.userId === selectedUsersId)
     .filter(todo => todo.title.toLowerCase().includes(filter.toLowerCase()))
 
     if(selectedUsersId === null) {
-        return <div className="todos-arrow"> <span> ← </span> Пожалуйста, выберите пользователя</div>
+        return <div className="todos-arrow"> <span className="span"> ← Пожалуйста, выберите пользователя </span></div>
     }
 
     const hndlTextFilter = (event) => {

@@ -1,6 +1,8 @@
 .App {
     width: 1200px;
+    margin: 0 auto ;
     display: flex;
+    justify-content: space-evenly;
     padding-left: 100px;
     padding-top: 20px;
 }
@@ -17,20 +19,20 @@
     padding: 0;
     padding-inline: 10px;
 }
-.liUsers {
+.liUsers, .selected {
     margin-bottom: 10px;
     padding: 5px;
     border: 1px solid gray;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
-.liUsers span {
+.liUsers span, .selected span {
     display: block;
 }
-.liUsers .username {
+.liUsers .username, .selected .username {
     font-weight: bold;
 }
-.liUsers .email {
+.liUsers .email, .selected .email {
     font-style: italic;
     color: gray;
 }
@@ -38,6 +40,10 @@
     background-color: lightblue;
     cursor: pointer;
     transform: scale(1.02);
+}
+.selected {
+    background-color: deepskyblue;
+    color: white;
 }
 .todos {
     width: 600px;
@@ -59,17 +65,14 @@
 }
 .todos-arrow {
     width: 600px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 400px;
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-top: 200px;
     background-image: url("https://avatars.mds.yandex.net/i?id=9cf9801cbf117d3145632b23a5ab9e85_l-2429503-images-thumbs&n=13");   
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    text-align: center;
 }
 .filter > input {
     width: 100%;
@@ -77,4 +80,8 @@
     box-sizing: border-box;
     line-height: 1.5;
 }
-
+.span {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}

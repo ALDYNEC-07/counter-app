@@ -11,8 +11,8 @@ import { Todos } from "./Todos"
 export const App = () => {
   const dispatch = useDispatch()
 
-  const loadingTodos = useSelector((state) => state.loadingTodos)
-  const loadingUsers = useSelector((state) => state.loadingUsers)
+  const loadingTodos = useSelector((state) => state.todos.loadingTodos)
+  const loadingUsers = useSelector((state) => state.users.loadingUsers)
 
   useEffect(() => {
     dispatch(loadUsers())
